@@ -86,14 +86,21 @@ extension MatchingDonarsViewController : UITableViewDataSource, UITableViewDeleg
         let userID = self.user[indexPath.row].userId
         let main = UIStoryboard(name: "Main", bundle: nil)
         let vc = main.instantiateViewController(identifier: "ProfileViewController") as! ProfileViewController
+     //   let nav = UINavigationController(rootViewController: vc)
+     //   vc.modalPresentationStyle = .fullScreen
         ServerCommunication.sharedDelegate.fetchUserData(userId: userID) { (status, message, user) in
-            
             if status{
-                print(vc.nameLabel.text!)
-//                vc.nameLabel.text = user!.firstName
-//                vc.bloodgroupLabel.text = user!.bloodGroup
-//                vc.emailLabel.text = user!.email
-//                vc.dobLabel.text = user!.dateOfBirth
+               
+        
+             //   vc.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "MatchingDonars", style: .plain, target: self, action: #selector(self.backToMatchingDonars))
+                vc.user = user
+                vc.isComingFromMatchingDonarList = true
+                
+                
+              //  self.present(nav, animated: true, completion: nil)
+               self.navigationController!.pushViewController(vc, animated: true)
+                
+                
              //   print(vc.)
 //                print(user!.firstName)
 //                print(user!.bloodGroup)
@@ -101,7 +108,7 @@ extension MatchingDonarsViewController : UITableViewDataSource, UITableViewDeleg
 //                print(user!.dateOfBirth)
                 //vc.setupUserProfile()
                 
-                self.tabBarController?.selectedIndex = 2
+//                self.tabBarController?.selectedIndex = 2
             }else{
                 
             }
@@ -109,4 +116,13 @@ extension MatchingDonarsViewController : UITableViewDataSource, UITableViewDeleg
         
     }
     
+//    @objc func backToMatchingDonars(){
+//
+//    }
+   
+    
 }
+
+
+
+ 

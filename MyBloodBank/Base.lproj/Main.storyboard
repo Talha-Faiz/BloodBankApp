@@ -341,6 +341,7 @@
                         <outlet property="emailLabel" destination="Zwg-Q5-hC6" id="XLg-7t-mQX"/>
                         <outlet property="nameLabel" destination="kTb-jD-Aro" id="I8Q-AV-6jG"/>
                         <outlet property="phoneNumberLabel" destination="yGp-Cd-y88" id="3T4-z3-ZEb"/>
+                        <outlet property="signOutLabel" destination="DrI-JI-7IH" id="iD3-oM-AKS"/>
                         <outlet property="userImage" destination="Meg-JO-yrn" id="r3W-sd-XvW"/>
                     </connections>
                 </viewController>
@@ -646,7 +647,7 @@
         <!--Profile-->
         <scene sceneID="uOm-Zp-yUI">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="W3e-eG-sc1" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="W3e-eG-sc1" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Profile" image="person.fill" catalog="system" id="ZwI-kW-EMt"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="MKm-Ia-5Dr">
