@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AllRequestTableViewCell" rowHeight="158" id="KGk-i7-Jjw" customClass="AllRequestTableViewCell" customModule="MyBloodBank" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="406" height="158"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="406" height="158"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MO7-x4-Ngh" userLabel="card">
+                        <rect key="frame" x="10" y="10" width="386" height="138"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Talha Faiz" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AQm-jl-5TT">
+                                <rect key="frame" x="47.666666666666657" y="105" width="75" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Blood Group" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cce-e0-cCg">
+                                <rect key="frame" x="170" y="44.666666666666664" width="96" height="20.999999999999993"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="0ZT-XI-4q6">
+                                <rect key="frame" x="40" y="11" width="90" height="88.666666666666671"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="qGK-3K-hPZ"/>
+                                    <constraint firstAttribute="width" constant="90" id="rZY-so-kjc"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A+" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9iM-5G-mBM">
+                                <rect key="frame" x="193" y="75.666666666666671" width="50" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="cWh-9r-DeL"/>
+                                    <constraint firstAttribute="width" constant="50" id="dTA-7s-nDP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ngM-HK-nJp">
+                                <rect key="frame" x="381" y="5" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="cce-e0-cCg" firstAttribute="leading" secondItem="0ZT-XI-4q6" secondAttribute="trailing" constant="40" id="4w1-vm-10n"/>
+                            <constraint firstItem="9iM-5G-mBM" firstAttribute="top" secondItem="cce-e0-cCg" secondAttribute="bottom" constant="10" id="HbS-vP-usF"/>
+                            <constraint firstItem="AQm-jl-5TT" firstAttribute="top" secondItem="0ZT-XI-4q6" secondAttribute="bottom" constant="5" id="Raj-9z-mKp"/>
+                            <constraint firstItem="0ZT-XI-4q6" firstAttribute="leading" secondItem="MO7-x4-Ngh" secondAttribute="leading" constant="40" id="Z6u-qh-Kju"/>
+                            <constraint firstItem="AQm-jl-5TT" firstAttribute="centerX" secondItem="0ZT-XI-4q6" secondAttribute="centerX" id="eqq-WW-yjj"/>
+                            <constraint firstItem="0ZT-XI-4q6" firstAttribute="top" secondItem="MO7-x4-Ngh" secondAttribute="top" constant="10" id="fsJ-ak-tJ0"/>
+                            <constraint firstItem="ngM-HK-nJp" firstAttribute="top" secondItem="MO7-x4-Ngh" secondAttribute="top" constant="5" id="tc2-II-KYV"/>
+                            <constraint firstItem="9iM-5G-mBM" firstAttribute="centerX" secondItem="cce-e0-cCg" secondAttribute="centerX" id="u5M-64-8KD"/>
+                            <constraint firstItem="cce-e0-cCg" firstAttribute="centerY" secondItem="0ZT-XI-4q6" secondAttribute="centerY" id="xZ8-pC-SZ3"/>
+                            <constraint firstAttribute="trailing" secondItem="ngM-HK-nJp" secondAttribute="trailing" constant="5" id="ygF-fI-lkg"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="MO7-x4-Ngh" secondAttribute="trailing" constant="10" id="233-jp-ykd"/>
+                    <constraint firstItem="MO7-x4-Ngh" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="NeA-z8-Pk8"/>
+                    <constraint firstItem="MO7-x4-Ngh" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="gRZ-AO-H2T"/>
+                    <constraint firstAttribute="bottom" secondItem="MO7-x4-Ngh" secondAttribute="bottom" constant="10" id="jjT-CO-gqK"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="bloodGroupLabel" destination="9iM-5G-mBM" id="hkV-bn-iGj"/>
+                <outlet property="cardView" destination="MO7-x4-Ngh" id="m8G-uH-WBb"/>
+                <outlet property="date" destination="ngM-HK-nJp" id="msH-a2-M1i"/>
+                <outlet property="img_image" destination="0ZT-XI-4q6" id="14d-zE-erB"/>
+                <outlet property="nameLabel" destination="AQm-jl-5TT" id="7vL-dO-dmN"/>
+                <outlet property="titleLabel" destination="cce-e0-cCg" id="O0a-QC-C9B"/>
+            </connections>
+            <point key="canvasLocation" x="243.47826086956525" y="77.008928571428569"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="person.circle" catalog="system" width="64" height="60"/>
+    </resources>
+</document>
