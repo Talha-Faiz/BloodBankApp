@@ -28,6 +28,11 @@
 		EFDDB70523E6ACCD000733EB /* AddRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDDB70423E6ACCD000733EB /* AddRequestViewController.swift */; };
 		EFDDB70723E6BAA4000733EB /* RequestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDDB70623E6BAA4000733EB /* RequestsViewController.swift */; };
 		EFF4A28423EDF22000A0C900 /* BloodGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF4A28323EDF22000A0C900 /* BloodGroup.swift */; };
+		EFF78E682402618000C91CBA /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF78E672402618000C91CBA /* ChatViewController.swift */; };
+		EFF78E6D2402C5F900C91CBA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF78E6C2402C5F900C91CBA /* Constants.swift */; };
+		EFF78E6F2402C6CD00C91CBA /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF78E6E2402C6CD00C91CBA /* Message.swift */; };
+		EFF78E722402CAEA00C91CBA /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF78E702402CAEA00C91CBA /* MessageCell.swift */; };
+		EFF78E732402CAEA00C91CBA /* MessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFF78E712402CAEA00C91CBA /* MessageCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +61,11 @@
 		EFDDB70423E6ACCD000733EB /* AddRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRequestViewController.swift; sourceTree = "<group>"; };
 		EFDDB70623E6BAA4000733EB /* RequestsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestsViewController.swift; sourceTree = "<group>"; };
 		EFF4A28323EDF22000A0C900 /* BloodGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloodGroup.swift; sourceTree = "<group>"; };
+		EFF78E672402618000C91CBA /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		EFF78E6C2402C5F900C91CBA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		EFF78E6E2402C6CD00C91CBA /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		EFF78E702402CAEA00C91CBA /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
+		EFF78E712402CAEA00C91CBA /* MessageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +94,8 @@
 			children = (
 				EF13417A23E6A22800B96896 /* AllRequestTableViewCell.swift */,
 				EF13417B23E6A22800B96896 /* AllRequestTableViewCell.xib */,
+				EFF78E702402CAEA00C91CBA /* MessageCell.swift */,
+				EFF78E712402CAEA00C91CBA /* MessageCell.xib */,
 			);
 			path = cells;
 			sourceTree = "<group>";
@@ -111,26 +123,53 @@
 			children = (
 				EFD47BF023E080E300BA3D44 /* AppDelegate.swift */,
 				EFD47BF223E080E300BA3D44 /* SceneDelegate.swift */,
-				EFD47BF423E080E300BA3D44 /* ViewController.swift */,
-				EFD47BF623E080E300BA3D44 /* Main.storyboard */,
+				EFF78E6B2402B35900C91CBA /* Model */,
+				EFF78E692402B32700C91CBA /* View */,
+				EFF78E6A2402B34B00C91CBA /* Controller */,
+				EF13417E23E6A24600B96896 /* cells */,
 				EFD47BF923E080E400BA3D44 /* Assets.xcassets */,
 				EFD47BFB23E080E400BA3D44 /* LaunchScreen.storyboard */,
 				EFD47BFE23E080E400BA3D44 /* Info.plist */,
-				EFD47C0523E0856F00BA3D44 /* LoginViewController.swift */,
-				EFD47C0723E0858700BA3D44 /* SignupViewController.swift */,
 				EFD47C0923E0A3B600BA3D44 /* GoogleService-Info.plist */,
 				EF5B194323EFDEA100DEF631 /* Splash */,
+				EFF78E6C2402C5F900C91CBA /* Constants.swift */,
+			);
+			path = MyBloodBank;
+			sourceTree = "<group>";
+		};
+		EFF78E692402B32700C91CBA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EFD47BF623E080E300BA3D44 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EFF78E6A2402B34B00C91CBA /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				EFF78E672402618000C91CBA /* ChatViewController.swift */,
+				EFD47BF423E080E300BA3D44 /* ViewController.swift */,
+				EFD47C0523E0856F00BA3D44 /* LoginViewController.swift */,
+				EFD47C0723E0858700BA3D44 /* SignupViewController.swift */,
 				EFA5638D23E17A0F008B1CF0 /* ProfileViewController.swift */,
-				EF920F6223E2C26600D6A75E /* User.swift */,
-				EF920F6423E2C3AA00D6A75E /* ServerCommunication.swift */,
-				EF13417E23E6A24600B96896 /* cells */,
 				EF13417F23E6A5A100B96896 /* MatchingDonarsViewController.swift */,
 				EFDDB70423E6ACCD000733EB /* AddRequestViewController.swift */,
 				EFDDB70623E6BAA4000733EB /* RequestsViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		EFF78E6B2402B35900C91CBA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EF920F6223E2C26600D6A75E /* User.swift */,
+				EF920F6423E2C3AA00D6A75E /* ServerCommunication.swift */,
 				EF80402B23EBADB700095D26 /* RoundImage.swift */,
 				EFF4A28323EDF22000A0C900 /* BloodGroup.swift */,
+				EFF78E6E2402C6CD00C91CBA /* Message.swift */,
 			);
-			path = MyBloodBank;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		FF6FAB2FAA0A3EB68098EC37 /* Frameworks */ = {
@@ -206,6 +245,7 @@
 				EFD47BFA23E080E400BA3D44 /* Assets.xcassets in Resources */,
 				EFD47C0A23E0A3B600BA3D44 /* GoogleService-Info.plist in Resources */,
 				EFD47BF823E080E300BA3D44 /* Main.storyboard in Resources */,
+				EFF78E732402CAEA00C91CBA /* MessageCell.xib in Resources */,
 				EF13417D23E6A22800B96896 /* AllRequestTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -262,17 +302,21 @@
 				EFA5638E23E17A0F008B1CF0 /* ProfileViewController.swift in Sources */,
 				EF80402C23EBADB700095D26 /* RoundImage.swift in Sources */,
 				EF920F6523E2C3AA00D6A75E /* ServerCommunication.swift in Sources */,
+				EFF78E6F2402C6CD00C91CBA /* Message.swift in Sources */,
 				EFD47C0623E0856F00BA3D44 /* LoginViewController.swift in Sources */,
 				EFDDB70523E6ACCD000733EB /* AddRequestViewController.swift in Sources */,
 				EFD47BF523E080E300BA3D44 /* ViewController.swift in Sources */,
 				EF13417C23E6A22800B96896 /* AllRequestTableViewCell.swift in Sources */,
+				EFF78E6D2402C5F900C91CBA /* Constants.swift in Sources */,
 				EFD47C0823E0858700BA3D44 /* SignupViewController.swift in Sources */,
 				EFD47BF123E080E300BA3D44 /* AppDelegate.swift in Sources */,
 				EFF4A28423EDF22000A0C900 /* BloodGroup.swift in Sources */,
 				EFD47BF323E080E300BA3D44 /* SceneDelegate.swift in Sources */,
 				EF920F6323E2C26600D6A75E /* User.swift in Sources */,
 				EFDDB70723E6BAA4000733EB /* RequestsViewController.swift in Sources */,
+				EFF78E682402618000C91CBA /* ChatViewController.swift in Sources */,
 				EF13418023E6A5A100B96896 /* MatchingDonarsViewController.swift in Sources */,
+				EFF78E722402CAEA00C91CBA /* MessageCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

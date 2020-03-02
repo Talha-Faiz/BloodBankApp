@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseDatabase
 
 class LoginViewController: UIViewController {
 
@@ -70,6 +71,7 @@ class LoginViewController: UIViewController {
                                                 // if user is already logged in there fore keeping user reference on sign in
                                                 User.userSharefReference = user!
                                                 print(authResult?.user.uid)
+                                                
                                                 self?.navigationController?.setNavigationBarHidden(true, animated: true)
                                                 self?.performSegue(withIdentifier: "toDashboard", sender: nil)
                                                 self?.activityIndicator.isHidden = false

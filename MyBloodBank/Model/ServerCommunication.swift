@@ -13,7 +13,7 @@ import FirebaseStorage
 public class ServerCommunication{
     var firebaseFirestore:Firestore!
        var firebaseStorage:Storage!
-       
+        var ref: DatabaseReference!
         static var sharedDelegate = ServerCommunication()
         
        
@@ -32,7 +32,6 @@ public class ServerCommunication{
                }
            }
        }
-    
     func deleteRequest(id:String,completion:@escaping(_ status:Bool, _ message:String)->Void){
         
         
@@ -44,7 +43,7 @@ public class ServerCommunication{
             }
         }
         
-    }
+    } 
     
     
        
@@ -60,6 +59,7 @@ public class ServerCommunication{
 
            // Create a reference to the file you want to upload
            let riversRef = firebaseStorage.reference().child("images/\(userId).jpg")
+            
            // Upload the file to the path "images/rivers.jpg"
            let _ = riversRef.putData(data, metadata: nil) { (metadata, error) in
              guard let _ = metadata else {
@@ -101,6 +101,12 @@ public class ServerCommunication{
                }
            }
        }
+    
+    func fetchUsersForMessage(user: [User]){
+        for i in user{
+            print(i.firstName)
+        }
+    }
        
        func fetchAllDonarsData (completion:@escaping(_ status:Bool, _ message:String, _ users:[User]?) -> Void) {
            firebaseFirestore.collection("Users").getDocuments { (snapshot, error) in
@@ -109,6 +115,7 @@ public class ServerCommunication{
                    if let usersData = snapshot?.documents {
                    // Got Donars
                    var users:Array = [User]()
+                    var usersForMessage:Array = [User]()
                     for matchingUser in usersData {
                            let usersDocuments = matchingUser.data()
                       //  print(Auth.auth().currentUser?.uid)
@@ -123,6 +130,8 @@ public class ServerCommunication{
                             let dateOfBirth = usersDocuments["DateOfBirth"] as! String
                             let phoneNumber = usersDocuments["PhoneNumber"] as! String
                             let user = User(firstName: firstName, lastName: lastName, dateOfBirth: dateOfBirth, bloodGroup: bloodGroup, phoneNumber: phoneNumber, email: email, userId: userId, imageUrl: imageUrl)
+                            
+                            
                             if User.userSharefReference.bloodGroup == "A+"{
                                 switch bloodGroup {
                                 case "A+", "A-", "O+", "O-":
@@ -181,11 +190,15 @@ public class ServerCommunication{
                                     break
                                 }
                             }
-                           //users.append(user)
+                           usersForMessage.append(user)
+                           
                             
                         }
+                        
+                        
                            
                        }
+                    self.fetchUsersForMessage(user: usersForMessage)
                        completion(true, "Get Donars", users)
                    } else {
                        // Donars doc not found

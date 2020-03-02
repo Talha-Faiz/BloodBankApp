@@ -83,9 +83,11 @@ extension MatchingDonarsViewController : UITableViewDataSource, UITableViewDeleg
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.tableView.deselectRow(at: indexPath, animated: true)
         let userID = self.user[indexPath.row].userId
         let main = UIStoryboard(name: "Main", bundle: nil)
         let vc = main.instantiateViewController(identifier: "ProfileViewController") as! ProfileViewController
+       
      //   let nav = UINavigationController(rootViewController: vc)
      //   vc.modalPresentationStyle = .fullScreen
         ServerCommunication.sharedDelegate.fetchUserData(userId: userID) { (status, message, user) in
@@ -94,6 +96,10 @@ extension MatchingDonarsViewController : UITableViewDataSource, UITableViewDeleg
         
              //   vc.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "MatchingDonars", style: .plain, target: self, action: #selector(self.backToMatchingDonars))
                 vc.user = user
+                print(vc.user?.userId)
+                
+               // print(vc1.user?.userId)
+              //  print(user?.userId)
                 vc.isComingFromMatchingDonarList = true
                 
                 

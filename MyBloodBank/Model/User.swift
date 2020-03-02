@@ -74,6 +74,8 @@ struct User {
             
         }
     
+
+    
     // creating dictionary for uploading user data as dictionary
         
     // Firebase.fullname.raw value is user keys name n firebase and self.full name is coming from textfields

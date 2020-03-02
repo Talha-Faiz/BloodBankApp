@@ -11,7 +11,9 @@ import FirebaseAuth
 import SDWebImage
 
 class ProfileViewController: UIViewController {
+    
 
+    @IBOutlet weak var chatBtnOutlet: UIButton!
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
@@ -28,8 +30,8 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-      //  self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "MatchingDonars", style: .plain, target: self, action: #selector(self.backToMatchingDonars))
+        chatBtnOutlet.isHidden = true
+      // bh self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "MatchingDonars", style: .plain, target: self, action: #selector(self.backToMatchingDonars))
     //    self.navigationItem.leftBarButtonItem?.isEnabled = false
   //      self.navigationItem.leftBarButtonItem?.tintColor = UIColor.clear
         if self.isComingFromMatchingDonarList {
@@ -40,20 +42,34 @@ class ProfileViewController: UIViewController {
         }
        
         userImage.roundedImage()
-        
+     //   print(user?.userId)
 
         // Do any additional setup after loading the view.
     }
     
+    
+    @IBAction func chatBtnPressed(_ sender: Any) {
+      //  performSegue(withIdentifier: "toChat", sender: nil)
+     //   self.present(ChatViewController, animated: true, completion: nil)
+        let main = UIStoryboard(name: "Main", bundle: nil)
+        let vc1 = main.instantiateViewController(identifier: "ChatViewController") as! ChatViewController
+        vc1.user = self.user
+        self.navigationController!.pushViewController(vc1, animated: true)
+    }
+    
+    
+    
     @objc func back() {
         self.dismiss(animated: true, completion: nil)
     }
-    override func viewWillDisappear(_ animated: Bool) {
-         self.navigationController?.popViewController(animated: true)
-     }
+//    override func viewWillDisappear(_ animated: Bool) {
+//        self.navigationController?.popViewController(animated: true)
+//     }
     
     
     func setDonarProfile(u: User) {
+     //   self.tabBarController?.tabBar.isHidden = true
+        chatBtnOutlet.isHidden = false
         self.signOutLabel.isHidden = true
         self.nameLabel.text = user!.firstName
         self.bloodgroupLabel.text = user!.bloodGroup
@@ -74,7 +90,7 @@ class ProfileViewController: UIViewController {
 //    }
     
     
-
+//
 //    @objc func backToMatchingDonars(){
 //        self.navigationController?.popViewController(animated: true)
 //    }
